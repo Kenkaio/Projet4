@@ -1,9 +1,13 @@
+form{
+	display: none;
+}
+
 #contact{
-	display: flex;
 	flex-direction: column;
 	padding-left: 50px;
 	padding-right: 50px;
 	background-color: rgb(236, 219, 179);
+	margin-top: -250px;
 }
 
 #nom, #mail, #subject, #message{
@@ -17,7 +21,7 @@
 	background-color: transparent;
 }
 
-h1{
+form h1{
 	color: rgb(168, 131, 43);
 	font-weight: normal;
 }
@@ -32,7 +36,7 @@ h1{
 }
 
 #mail{
-	margin-left: 37px;
+	margin-left: 35px;
 }
 
 #contact textarea{

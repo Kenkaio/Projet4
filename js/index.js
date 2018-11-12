@@ -1,4 +1,3 @@
-
 var nom = document.getElementById('nom');
 nom.value = "Nom";
 nom.style.color = "grey";
@@ -75,8 +74,24 @@ message.addEventListener("blur", function(){
     }
 });
 
-
-$('#contact').hide();
 $('#lienContact').on('click', function(){
-    $('#contact').fadeIn(1000);
+    $('#contact').css({
+        "display": "flex"
+    });
+});
+
+$('#titre').show();
+window.onload = function(){
+    $('#titre').css({
+        "opacity": '1',
+        "transition": '3s'
+    })
+}
+
+$(function() {
+    // Sections height
+    $(window).resize(function() {
+        var sH = $(window).height();
+        $('.NomDeTaClass').css('height', sH + 'px');
+    });        
 });
