@@ -26,9 +26,8 @@
 				<h2>Un roman écrit par JEAN FORTEROCHE</h2>
 			</div>				
 		</div>
-		<div id="test">
-			
-		</div>
+		<div id="bg"></div>
+		<div id="dernierArticle"></div>
 
 		<form id="contact" method="POST" action="contact.php">
 			<h1>CONTACT</h1>

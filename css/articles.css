@@ -1,0 +1,22 @@
+#titreArticle{
+	font-weight: bold;
+}
+
+#mesArticles{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#article{
+	margin: 20px; 
+	border: 2px solid black;
+	width: 700px;
+	height: 300px;
+	overflow: hidden;
+	background-color: white;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}

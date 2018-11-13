@@ -23,6 +23,7 @@ header{
 	position: fixed;
 	text-align: center;
 	right: 25%;
+	margin-top: 5px;
 }
 
 ul a{
@@ -37,6 +38,7 @@ nav{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	border: 3px solid black;
 	background-image: url('../images/bg.jpg');
 	background-size: cover;
 	height: 600px;
@@ -57,7 +59,7 @@ nav{
 	border-radius: 30px;
 }
 
-#test{
+#bg{
 	background-attachment:fixed;
 	height: 350px;
 	background-image: url('../images/livre.jpg');
