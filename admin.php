@@ -16,39 +16,38 @@ session_start();
 	<?php
 		if (empty($_SESSION['ouvert']))  {
 			header('location:php/connexion.php');
-		}?>
-			<script type="text/javascript">
-				$('#formCo').css({
-					"display": "none"
-				});
-			</script>
-			<a href="php/destroy_session.php"><button id="deco"></button></a>
-			
-			<div id="sommaire">
-				<div id="addArticle" class="lienAdmin">
-				</div>
-				<div id="allArticles" class="lienAdmin">
-				</div>
-				<div id="profil" class="lienAdmin">
-					<h2>Modifier mon profil</h2>
-				</div>
-			</div>
-
-			<form action="php/reception_fichier.php" method="post" enctype="multipart/form-data" id="formArticle">
-				<h2> Ajouter un article </h2>
-				<div class="titreArticle">
-					<label for="titre" name="titre" id="titre">Titre article : </label><input type="text" name="titre" required>
-				</div>
-				<div class="zoneArticle">
-					<textarea for="contenu" name="contenu" id="contenu" class="ckeditor" style="height: 40em"></textarea>	
-				</div>
-		            <input type="submit" id="validerArticle"/>		
-			</form>
-			<?php
-				include 'php/allArticles.php';
-			?>
-			<script src="js/admin.js"></script>
-		
+		}
+	?>
+	<script type="text/javascript">
+		$('#formCo').css({
+			"display": "none"
+		});
+	</script>
+	<canvas id="menu" width="50" height="50"></canvas>
 	
+	<div id="sommaire">
+		<div id="addArticle" class="lienAdmin">
+		</div>
+		<div id="allArticles" class="lienAdmin">
+		</div>
+		<div id="profil" class="lienAdmin">
+			<h2>Modifier mon profil</h2>
+		</div>
+	</div>
+
+	<form action="php/reception_fichier.php" method="post" enctype="multipart/form-data" id="formArticle">
+		<h2> Ajouter un article </h2>
+		<div class="titreArticle">
+			<label for="titre" name="titre" id="titre">Titre article : </label><input type="text" name="titre" required>
+		</div>
+		<div class="zoneArticle">
+			<textarea for="contenu" name="contenu" id="contenu" class="ckeditor" style="height: 40em"></textarea>	
+		</div>
+            <input type="submit" id="validerArticle"/>		
+	</form>
+	<?php
+		include 'php/allArticles.php';
+	?>
+	<script src="js/admin.js"></script>	
 </body>
 </html>	
