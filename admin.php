@@ -24,6 +24,13 @@ session_start();
 		});
 	</script>
 	<canvas id="menu" width="50" height="50"></canvas>
+	<div class="menu">
+		<div id="accueil" class="liensMenu"><a href="admin.php">Accueil</a></div>
+		<div id="ajoutArticle" class="liensMenu">Ajouter un article</div>
+		<div id="administration" class="liensMenu">Administration</div>
+		<div id="monProfil" class="liensMenu">Profil</div>
+		<div id="deco" class="liensMenu"><a href="php/destroy_session.php">Déconnexion</a></div>
+	</div>
 	
 	<div id="sommaire">
 		<div id="addArticle" class="lienAdmin">

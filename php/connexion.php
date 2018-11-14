@@ -37,7 +37,7 @@
 				header('location:../admin.php');
 			}
 			else{
-				echo "<font color='#D30A0A'>pseudo ou password incorrect</font>";
+				echo "<div id='erreur'>pseudo ou password incorrect</div>";
 			}
 		}
 	}

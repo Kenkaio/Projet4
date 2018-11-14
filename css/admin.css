@@ -1,6 +1,6 @@
 body{
 	background-image: url('../images/fond3.jpg');
-	background-size: 100%;
+	background-size: 200%;
 	overflow-x: hidden;
 }
 
@@ -58,11 +58,6 @@ h1{
 	margin-left: 50px;
 	font-weight: bold;
 }
-
-#valider{
-	
-}
-
 #erreur{
 	margin-left: 44%;
 	margin-top: 10px;
@@ -106,6 +101,7 @@ h1{
 	border: 2px solid black;
 	top: 30px;
 	right: 50px;
+	transition: transform 1.3s ease;
 }
 
 button:hover{
@@ -130,4 +126,37 @@ button:hover{
 	height: 375px;
 	background-image: url('../images/lire.png');
 	background-size: 100%;
+}
+
+.menu{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 99%;
+	border: 5px solid black;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	font-size: 1.6em;	 
+}
+
+.liensMenu{
+	border: 2px solid white;
+	border-radius: 20px;
+	margin-top: 40px;
+	padding: 5px;
+	text-align: center;
+}
+
+.liensMenu:hover{
+	cursor: pointer;
+}
+
+#accueil{
+	margin-top: 150px;
+}
+
+.liensMenu a{
+	color: white;
+	text-decoration: none;
 }

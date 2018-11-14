@@ -3,6 +3,8 @@
 }
 
 #mesArticles{
+	width: 50%;
+	margin: auto;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -14,9 +16,49 @@
 	height: 300px;
 	overflow: hidden;
 	background-color: white;
+	padding: 30px;
+}
+
+.articleComplet{
+	margin: auto;
+	display: flex;
+}
+
+#articleComplet{
+	width: 60%;
+	margin: 20px; 
+	border: 2px solid black;
+	background-color: white;
+	padding: 30px;
 }
 
 a{
 	text-decoration: none;
 	color: black;
+}
+
+#commentaireArticle{
+	border-top: 2px solid grey;
+	border-bottom: 2px solid grey;
+	margin-top: 30px;
+	width: 600px;
+	min-height: 80px;
+	}
+
+#blocCommentaire{
+	position: relative;
+	width: 500px;
+}
+
+strong{
+	font-weight: bold;
+}
+
+#responseCommentaire{
+	width: 400px;
+	margin-left: 50px;
+}
+
+.articleEtCom{
+	margin-top: 100px;
 }

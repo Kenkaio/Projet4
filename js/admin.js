@@ -1,17 +1,47 @@
+i = 40;
+y = 5;
+z = 45;
+on=false;
+active=false;
+var menuOn = false;
+var ajoutArticleMenu = false;
+canvas = document.getElementById("menu"); 
+context = canvas.getContext('2d');
+
+$('#formArticle').hide();
+$('#mesArticles').hide();
+$('.menu').hide();
+
 $('.lienAdmin').mouseover(function(){
 	$('.lienAdmin').css({
 		"cursor":"pointer"
 	});
 });
 
-$('#formArticle').hide();
-
 $('#addArticle').on('click', function(){
 	$('#sommaire').toggle();
 	$('#formArticle').show(1000);
 });
 
-$('#mesArticles').hide();
+$('#ajoutArticle').on('click', function(){
+	if (!active) {
+		if (!ajoutArticleMenu) {
+			$('#sommaire').toggle();
+			$('#formArticle').show(1000);
+			ajoutArticleMenu=true;
+			$('#menu').css("transform","translate(0,0)");
+			$('.menu').hide(1000);		
+			drawLine();	
+			active=true;
+	  		on=false;
+			menuOn=false;
+		}
+		else{
+			$('#formArticle').hide();
+			ajoutArticleMenu=false;
+		}	
+	}
+});
 
 $('#allArticles').on('click', function(){
 	$('#sommaire').toggle();
@@ -24,8 +54,6 @@ $('#menu').mouseover(function(){
 	});
 });
 
-canvas = document.getElementById("menu"); 
-context = canvas.getContext('2d');
 function drawLine(){
 	context.clearRect(0,0,50,50);
 	context.beginPath();
@@ -50,10 +78,6 @@ function drawLine(){
 	context.stroke(); 
 } 
 
-i = 40;
-y = 5;
-z = 45;
-on=false;
 function drawLineAfter(){
 	context.clearRect(0, 0, 50, 50);
 	context.beginPath();
@@ -90,11 +114,22 @@ $('#menu').on('click', function() {
 		y = 5;
 		z = 45;
 	  	on=true;
-	  	console.log(on);
   	}
   	else{
   		drawLine();	
   		on=false;
-  		console.log(on);
   	}  		
 });
+
+$('#menu').on('click', function(){
+	if (!menuOn) {
+		$('#menu').css("transform","translate(-160px,0)");
+		$('.menu').show(1000);
+		menuOn=true;
+	}
+	else{
+		$('#menu').css("transform","translate(0,0)");
+		$('.menu').hide(1000);
+		menuOn=false;
+	}
+})
