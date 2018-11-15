@@ -7,7 +7,7 @@ form{
 	padding-left: 50px;
 	padding-right: 50px;
 	background-color: rgb(236, 219, 179);
-	margin-top: -250px;
+	margin-bottom: 20px;
 }
 
 #nom, #mail, #subject, #message{
@@ -36,7 +36,7 @@ form h1{
 }
 
 #mail{
-	margin-left: 35px;
+	margin-left: 45px;
 }
 
 #contact textarea{

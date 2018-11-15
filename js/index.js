@@ -78,14 +78,21 @@ $('#lienContact').on('click', function(){
     $('#contact').css({
         "display": "flex"
     });
+    $('#biog').hide();
+    $('.descriptionAuteur').hide();
 });
 
+
 $('#titre').show();
+$('#biog').hide();
+$('.descriptionAuteur').hide();
 window.onload = function(){
     $('#titre').css({
         "opacity": '1',
         "transition": '3s'
-    })
+    });
+    $('#biog').show(1000);
+    $('.descriptionAuteur').show(1000);
 }
 
 $(function() {

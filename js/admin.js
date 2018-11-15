@@ -1,8 +1,7 @@
 i = 40;
 y = 5;
 z = 45;
-on=false;
-active=false;
+logoMenuActif=false;
 var menuOn = false;
 var ajoutArticleMenu = false;
 canvas = document.getElementById("menu"); 
@@ -21,31 +20,39 @@ $('.lienAdmin').mouseover(function(){
 $('#addArticle').on('click', function(){
 	$('#sommaire').toggle();
 	$('#formArticle').show(1000);
+	ajoutArticleActif=true;
 });
 
 $('#ajoutArticle').on('click', function(){
-	if (!active) {
-		if (!ajoutArticleMenu) {
-			$('#sommaire').toggle();
-			$('#formArticle').show(1000);
-			ajoutArticleMenu=true;
-			$('#menu').css("transform","translate(0,0)");
-			$('.menu').hide(1000);		
-			drawLine();	
-			active=true;
-	  		on=false;
-			menuOn=false;
-		}
-		else{
-			$('#formArticle').hide();
-			ajoutArticleMenu=false;
-		}	
-	}
+	$('#mesArticles').hide();
+	$('#sommaire').hide();
+	$('#formArticle').show(1000);
+	ajoutArticleMenu=true;
+	$('#menu').css("transform","translate(0,0)");
+	$('.menu').hide(1000);		
+	drawLine();	
+	ajoutArticleActif=true;
+	logoMenuActif=false;
+	menuOn=false;
+});
+
+$('#administration').on('click', function(){	
+	$('#formArticle').hide();
+	$('#sommaire').hide();
+	$('#mesArticles').show(1000);
+	allArticle=true;
+	$('#menu').css("transform","translate(0,0)");
+	$('.menu').hide(1000);		
+	drawLine();	
+	ajoutArticleActif=false;
+		logoMenuActif=false;
+	menuOn=false;
 });
 
 $('#allArticles').on('click', function(){
 	$('#sommaire').toggle();
 	$('#mesArticles').show(1000);
+	allArticle = true;
 });
 
 $('#menu').mouseover(function(){
@@ -103,7 +110,7 @@ function drawLineAfter(){
 drawLine();
 
 $('#menu').on('click', function() {
-  	if (!on) {
+  	if (!logoMenuActif) {
   		setInterval(function(){ 
 			if (i > 0) { 
 			  	drawLineAfter();
@@ -113,11 +120,11 @@ $('#menu').on('click', function() {
 	  	i = 40;
 		y = 5;
 		z = 45;
-	  	on=true;
+	  	logoMenuActif=true;
   	}
   	else{
   		drawLine();	
-  		on=false;
+  		logoMenuActif=false;
   	}  		
 });
 
