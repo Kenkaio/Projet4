@@ -1,3 +1,5 @@
+/* ----- Création et mise en page du formulaire contact ------ */
+
 var nom = document.getElementById('nom');
 nom.value = "Nom";
 nom.style.color = "grey";
@@ -74,6 +76,8 @@ message.addEventListener("blur", function(){
     }
 });
 
+/* ----- afficher le formulaire de contact ----- */
+
 $('#lienContact').on('click', function(){
     $('#contact').css({
         "display": "flex"
@@ -82,6 +86,8 @@ $('#lienContact').on('click', function(){
     $('.descriptionAuteur').hide();
 });
 
+
+/* ----- animation chargement de la page ----- */
 
 $('#titre').show();
 $('#biog').hide();
@@ -94,11 +100,3 @@ window.onload = function(){
     $('#biog').show(1000);
     $('.descriptionAuteur').show(1000);
 }
-
-$(function() {
-    // Sections height
-    $(window).resize(function() {
-        var sH = $(window).height();
-        $('.NomDeTaClass').css('height', sH + 'px');
-    });        
-});

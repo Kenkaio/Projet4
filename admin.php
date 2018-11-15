@@ -1,4 +1,5 @@
 <?php
+/* ----- Vérification si session est ouverte (si utilisateur connecté) sinon redirection ----- */
 session_start();
 
 if (empty($_SESSION['ouvert']))  {
@@ -17,11 +18,8 @@ if (empty($_SESSION['ouvert']))  {
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-	<script type="text/javascript">
-		$('#formCo').css({
-			"display": "none"
-		});
-	</script>
+
+	<!-- Menu droite partie admin -->
 	<canvas id="menu" width="50" height="50"></canvas>
 	<div class="menu">
 		<div id="accueil" class="liensMenu"><a href="admin.php">Accueil</a></div>
@@ -30,13 +28,15 @@ if (empty($_SESSION['ouvert']))  {
 		<div id="monProfil" class="liensMenu">Profil</div>
 		<div id="deco" class="liensMenu"><a href="php/destroy_session.php">Déconnexion</a></div>
 	</div>
-	
+
+	<!-- Menu avec les images au centre -->	
 	<div id="sommaire">
 		<div id="addArticle" class="lienAdmin"></div>
 		<div id="allArticles" class="lienAdmin"></div>
 		<div id="profil" class="lienAdmin"></div>
 	</div>
 
+	<!-- Formulaire de contact -->
 	<form action="php/reception_fichier.php" method="post" enctype="multipart/form-data" id="formArticle">
 		<h2> Ajouter un article </h2>
 		<div class="titreArticle">

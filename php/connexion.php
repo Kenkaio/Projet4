@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="../css/admin.css">
 
+<!-- Formulaire connexion -->
 <form action="connexion.php" method="POST" id="formCo">
 	<img src="../images/logoCo.png" id="logoCo" alt="logo connexion">
 	<h1>Sign in</h1>
@@ -26,7 +27,7 @@
 			echo "<div id='erreur'>Pseudo ou password incorrect !!! </div>";
 		}
 		else
-		{
+		{	/* ---- Si connecté, création variable session ----- */
 			if ($Verif_Pass) {
 				session_start();
 				$_SESSION['ouvert']='true'; 

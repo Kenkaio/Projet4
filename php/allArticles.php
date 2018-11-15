@@ -1,3 +1,5 @@
+<!-- Affiche tous les articles de la bdd (page inclue dans admin.php) par odre desc -->
+
 <div id="mesArticles">
 	<?php
 

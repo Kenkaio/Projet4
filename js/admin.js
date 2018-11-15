@@ -1,65 +1,16 @@
+/* ----- Variables d'animation logo menu ----- */
 i = 40;
 y = 5;
 z = 45;
+
+/* ----- Déclaration varialbe si menu actif ou non ----- */
 logoMenuActif=false;
 var menuOn = false;
 var ajoutArticleMenu = false;
+
+/* ----- Création + animation logo menu en canvas ----- */
 canvas = document.getElementById("menu"); 
 context = canvas.getContext('2d');
-
-$('#formArticle').hide();
-$('#mesArticles').hide();
-$('.menu').hide();
-
-$('.lienAdmin').mouseover(function(){
-	$('.lienAdmin').css({
-		"cursor":"pointer"
-	});
-});
-
-$('#addArticle').on('click', function(){
-	$('#sommaire').toggle();
-	$('#formArticle').show(1000);
-	ajoutArticleActif=true;
-});
-
-$('#ajoutArticle').on('click', function(){
-	$('#mesArticles').hide();
-	$('#sommaire').hide();
-	$('#formArticle').show(1000);
-	ajoutArticleMenu=true;
-	$('#menu').css("transform","translate(0,0)");
-	$('.menu').hide(1000);		
-	drawLine();	
-	ajoutArticleActif=true;
-	logoMenuActif=false;
-	menuOn=false;
-});
-
-$('#administration').on('click', function(){	
-	$('#formArticle').hide();
-	$('#sommaire').hide();
-	$('#mesArticles').show(1000);
-	allArticle=true;
-	$('#menu').css("transform","translate(0,0)");
-	$('.menu').hide(1000);		
-	drawLine();	
-	ajoutArticleActif=false;
-		logoMenuActif=false;
-	menuOn=false;
-});
-
-$('#allArticles').on('click', function(){
-	$('#sommaire').toggle();
-	$('#mesArticles').show(1000);
-	allArticle = true;
-});
-
-$('#menu').mouseover(function(){
-	$('hr').css({
-		"width": "0"
-	});
-});
 
 function drawLine(){
 	context.clearRect(0,0,50,50);
@@ -108,7 +59,6 @@ function drawLineAfter(){
 }
 
 drawLine();
-
 $('#menu').on('click', function() {
   	if (!logoMenuActif) {
   		setInterval(function(){ 
@@ -140,3 +90,53 @@ $('#menu').on('click', function(){
 		menuOn=false;
 	}
 })
+
+/* ---- Différentes animation en fonction de la séction du menu choisit ---- */
+
+$('#formArticle').hide();
+$('#mesArticles').hide();
+$('.menu').hide();
+
+$('.lienAdmin').mouseover(function(){
+	$('.lienAdmin').css({
+		"cursor":"pointer"
+	});
+});
+
+$('#addArticle').on('click', function(){
+	$('#sommaire').toggle();
+	$('#formArticle').show(1000);
+	ajoutArticleActif=true;
+});
+
+$('#ajoutArticle').on('click', function(){
+	$('#mesArticles').hide();
+	$('#sommaire').hide();
+	$('#formArticle').show(1000);
+	ajoutArticleMenu=true;
+	$('#menu').css("transform","translate(0,0)");
+	$('.menu').hide(1000);		
+	drawLine();	
+	ajoutArticleActif=true;
+	logoMenuActif=false;
+	menuOn=false;
+});
+
+$('#administration').on('click', function(){	
+	$('#formArticle').hide();
+	$('#sommaire').hide();
+	$('#mesArticles').show(1000);
+	allArticle=true;
+	$('#menu').css("transform","translate(0,0)");
+	$('.menu').hide(1000);		
+	drawLine();	
+	ajoutArticleActif=false;
+		logoMenuActif=false;
+	menuOn=false;
+});
+
+$('#allArticles').on('click', function(){
+	$('#sommaire').toggle();
+	$('#mesArticles').show(1000);
+	allArticle = true;
+});

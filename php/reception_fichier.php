@@ -2,6 +2,8 @@
 session_start();
 ?>
 
+<!-- Ajout / Suppresion / Update de l'article sélectionné avec id -->
+
 <nav id="menu">        
     <div class="element_menu">
         <h3>Titre menu</h3>

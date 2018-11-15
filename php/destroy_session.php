@@ -1,7 +1,8 @@
+<!-- Quand clique sur deconnecté, destruction de la session + redirection connexion.php -->
+
 <?php 
 session_start();
 
-// Suppression des variables de session et de la session
 $_SESSION = array();
 session_destroy();
 
