@@ -61,6 +61,7 @@ strong{
 }
 
 .articleEtCom{
+	margin: 0;
 	margin-top: 100px;
 }
 
@@ -82,7 +83,6 @@ strong{
 }
 
 #formArticleAdmin{
-	margin: auto;
 	margin-top: 50px;
 	width: 60%;
 }
@@ -90,11 +90,13 @@ strong{
 #update{
 	font-size: 0em;
 	border: none;
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 	background-color: white;
-	background-image: url('../images/update.png');
+	background-image: url('../images/edit.png');
 	background-size: 100%; 
+	border-radius: 0 0 50px 0;
+	margin-top: 10px;
 }
 
 #supprimer{
@@ -103,7 +105,49 @@ strong{
 	width: 80px;
 	height: 80px;
 	background-color: white;
-	background-image: url('../images/supprimer.jpg');
+	background-image: url('../images/croix.png');
 	background-size: 100%; 
 	border-radius: 50px;
+}
+
+.deleteCom, .edit, .editRep{
+	width: 20px;
+	height: 20px;
+	font-size: 0;
+	background-image: url('../images/croix.png');
+	background-color: white;
+	border: none;
+	background-size: 100%; 
+	outline: 0;
+}
+
+.deleteCom:hover, .edit:hover, .editRep:hover, .confirmEdit:hover{
+	cursor: pointer;
+}
+
+.editTextarea{
+	display: none;
+}
+
+.edit, .editRep{
+	position: absolute;
+	top: 3px;
+	right: -20px;
+	background-image: url('../images/edit.png');	
+}
+
+.auteur, .auteurRep{
+	position: relative;
+}
+
+.confirmEdit{
+	width: 40px;
+	height: 40px;
+	font-size: 0;
+	background-image: url('../images/valider.png');
+	background-color: white;
+	border: none;
+	background-size: 100%; 
+	outline: 0;
+	margin-left: 45%;
 }

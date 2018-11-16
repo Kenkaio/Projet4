@@ -19,13 +19,15 @@ session_start();
                     $req = $bdd->prepare('UPDATE articles SET contenu=? WHERE id=?');
                     $req->execute(array(
                         htmlspecialchars($_POST['contenuArt']),
-                        $_POST['id']
-                    )); 
+                        $_POST['idArt']
+                    ));     
+                    header('location:mesArticles.php?id=' . $_POST['idArt']);
                 }
 
                 if(isset($_POST['supprimer'])){
                     $req = $bdd->prepare('DELETE FROM articles WHERE id=?');
-                    $req->execute(array($_POST['id']));
+                    $req->execute(array($_POST['idArt']));
+                    header('location:../admin.php');
                 }
 
                 if(isset($_POST['validerArticle'])){
@@ -34,8 +36,38 @@ session_start();
                         'titre' => htmlspecialchars($_POST['titre']), 
                         'contenu' => htmlspecialchars($_POST['contenu'])
                     )); 
+                    header('location:../admin.php');
                 }
-                header('location:../admin.php');
+
+                if(isset($_POST['deleteCom'])){
+                    $req = $bdd->prepare('DELETE FROM commentaires WHERE id=?');
+                    $req->execute(array($_POST['deleteCom']));                    
+                    header('location:mesArticles.php?id=' . $_POST['idArt']);
+                }
+
+                if(isset($_POST['deleteRep'])){
+                    $req = $bdd->prepare('DELETE FROM reponses WHERE idR=?');
+                    $req->execute(array($_POST['deleteRep']));
+                    header('location:mesArticles.php?id=' . $_POST['idArt']);
+                }
+
+                if(isset($_POST['confirmEdit'])){
+                    $req = $bdd->prepare('UPDATE commentaires SET contenu=? WHERE id=?');
+                    $req->execute(array(
+                        $_POST['contenuCom'],
+                        $_POST['confirmEdit']
+                    ));
+                    header('location:mesArticles.php?id=' . $_POST['idArt']); 
+                }
+
+                if(isset($_POST['confirmRepEdit'])){
+                    $req = $bdd->prepare('UPDATE reponses SET contenuRep=? WHERE idR=?');
+                    $req->execute(array(
+                        $_POST['contenuRep'],
+                        $_POST['confirmRepEdit']
+                    )); 
+                    header('location:mesArticles.php?id=' . $_POST['idArt']);
+                }
        		?>
     </div>    
 </nav>

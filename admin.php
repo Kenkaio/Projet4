@@ -36,7 +36,7 @@ if (empty($_SESSION['ouvert']))  {
 		<div id="profil" class="lienAdmin"></div>
 	</div>
 
-	<!-- Formulaire de contact -->
+	<!-- Ajout article -->
 	<form action="php/reception_fichier.php" method="post" enctype="multipart/form-data" id="formArticle">
 		<h2> Ajouter un article </h2>
 		<div class="titreArticle">
