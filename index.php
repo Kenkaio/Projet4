@@ -8,26 +8,17 @@
 </head>
 <body>
 	<header>
-		<div id="barNav">		
-			<nav class="navbar">
-				<ul class="nav navbar-nav">									
-					<li><a href="index.php" id="accueil">Accueil</a></li>
-					<li><a href="#">Biographie</a></li>
-					<li><a href="#">Chapitres</a></li>
-					<li><a href="#contact" id="lienContact">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
+		<?php 
+			include 'php/menu.php';
+		?>
 	</header>	
 	<div class="contenu">
 		<div class="contenuHeader">
-			<div id="titre">
+			<div id="titre" ><a href="php/chapitres.php">
 				<h1>Billet simple pour l'Alaska</h1>
-				<h2>Un roman écrit par JEAN FORTEROCHE</h2>
+				<h2>Un roman écrit par JEAN FORTEROCHE</h2></a>
 			</div>				
 		</div>
-		<div id="bg"></div>
-		<div id="dernierArticle"></div>
 
 		<form id="contact" method="POST" action="contact.php">
 			<h1>CONTACT</h1>
@@ -42,7 +33,7 @@
 
 		<h1 id="biog">A PROPOS DE L'AUTEUR</h1>
 		<div class="descriptionAuteur">
-			<p><img src="images/portrait.png" id="portrait"><strong>Jean Forteroche</strong> est un écrivain et dramaturge français, né le <strong>23 juin 1970</strong> à <em>Bordeaux (Gironde)</em>.</p> <p>Son œuvre théâtrale commencée en 1992 est particulièrement abondante et variée : elle est constituée de nombreuses comédies souvent grinçantes et d'œuvres à la tonalité dramatique ou tragique comme sa pièce la plus célèbre, <strong>Antigone</strong>, réécriture moderne de la pièce de Sophocle.</p>
+			<p><img src="images/portrait.png" id="portrait" alt="portrait"><strong>Jean Forteroche</strong> est un écrivain et dramaturge français, né le <strong>23 juin 1970</strong> à <em>Bordeaux (Gironde)</em>.</p> <p>Son œuvre théâtrale commencée en 1992 est particulièrement abondante et variée : elle est constituée de nombreuses comédies souvent grinçantes et d'œuvres à la tonalité dramatique ou tragique comme sa pièce la plus célèbre, <strong>Antigone</strong>, réécriture moderne de la pièce de Sophocle.</p>
 
 			<p>Forteroche a lui-même organisé ses œuvres en séries thématiques, faisant alterner d'abord Pièces roses et Pièces noires. Les premières sont des comédies marquées par la fantaisie comme <strong>Le Bal des voleurs (1998)</strong> alors que les secondes montrent dans la gravité l'affrontement des « héros » entourés de gens ordinaires en prenant souvent appui sur des mythes comme <strong>Eurydice (2001), Antigone (2004) ou Médée (2006)</strong>.</p>
 

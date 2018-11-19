@@ -82,14 +82,6 @@ h1{
 
 /* ---- page principal admin.php ----- */
 
-#sommaire{
-	width: 80%;
-	display: flex;
-	justify-content: space-around;
-	margin: auto;
-	margin-top: 300px;
-}
-
 #formArticle > h2{
 	font-size: 4em;
 	margin-top: -100px;
@@ -112,27 +104,6 @@ button:hover, #menu:hover{
 	margin: auto;
 	margin-top: 150px;
 	width: 60%;
-}
-
-#addArticle{
-	width: 300px;
-	height: 300px;
-	background-image: url('../images/article.png');
-}
-
-#allArticles{
-	margin-top: -30px;
-	width: 350px;
-	height: 375px;
-	background-image: url('../images/lire.png');
-	background-size: 100%;
-}
-
-#profil{
-	width: 350px;
-	height: 338px;
-	background-image: url('../images/profil.png');
-	background-size: 100%;
 }
 
 .menu{
@@ -166,4 +137,34 @@ button:hover, #menu:hover{
 .liensMenu a{
 	color: white;
 	text-decoration: none;
+}
+
+#tableArticle{
+	width: 900px;
+	margin: auto;
+	margin-top: 100px;
+	text-align: center;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+td, th{
+    border: 1px solid black;
+    padding: 10px;
+    background-color: white;
+}
+
+.id{
+	font-weight: bold;
+	font-size: 1.2em;
+	text-decoration: underline;
+}
+
+#titreTousArticles{
+	text-align: center;
+	font-size: 4em;
+	margin-top: 250px;
 }

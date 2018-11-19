@@ -21,11 +21,13 @@ session_start();
 		<form action="reception_fichier.php" method="post" enctype="multipart/form-data" id="formArticleAdmin">
 			<input type='hidden' name='idArt' value='<?php echo "".$_GET['id']."" ?>'></input>
 		<?php
-			$bdd = new PDO('mysql:host=localhost;dbname=jeanforteroche;charset=utf8', 'root', '');
+			/*$bdd = new PDO('mysql:host=localhost;dbname=jeanforteroche;charset=utf8', 'root', '');*/
+			$bdd = new PDO('mysql:host=db761958864.hosting-data.io;dbname=db761958864;charset=utf8', 'dbo761958864', 'Polo<555');
 	        $req = $bdd->query("SELECT * FROM articles WHERE id=" . $_GET['id']);
 	        $donnees = $req->fetch();
 	        if ($donnees) { 
-		        $bdd = new PDO('mysql:host=localhost;dbname=jeanforteroche;charset=utf8', 'root', '');
+		        /*$bdd = new PDO('mysql:host=localhost;dbname=jeanforteroche;charset=utf8', 'root', '');*/
+				$bdd = new PDO('mysql:host=db761958864.hosting-data.io;dbname=db761958864;charset=utf8', 'dbo761958864', 'Polo<555');
 				$req = $bdd->query("SELECT * FROM articles WHERE id=" . $_GET['id']);
 				while ($donnees = $req->fetch()){
 					$date = $donnees['date'];
@@ -46,13 +48,15 @@ session_start();
 					$req = $bdd->prepare("SELECT * FROM commentaires WHERE idArticle=? ORDER BY id DESC"); // Affiche les commentaires
 					$req->execute(array($_GET['id']));
 					while ($donnees = $req->fetch()){
+						$date = date_create($donnees['date']);
+						$echoDate = date_format($date, 'd-m-Y H:i:s');						
 						echo "
 							<form action='reception_fichier.php' method='post' enctype='multipart/form-data' id='formArticleAdmin'>
 								<input type='hidden' name='idArt' value='".$_GET['id']."'></input>
 								<div class='articleEtCom'>
 									<div id='commentaireArticle'>
 										<span id='auteur" . $donnees['id']. "' class='auteur'>
-											<strong>" . $donnees['auteur'] . "</strong> " . $donnees['date'] . "
+											<strong>" . $donnees['auteur'] . "</strong> " . $echoDate . "
 											<input type='submit' class='deleteCom' name='deleteCom' value=".$donnees['id']." '></input>
 											<button class='edit' value=" . $donnees['id']. " onclick='return false'></button>
 										</span></br>									
@@ -71,7 +75,7 @@ session_start();
 						while ($donnees1 = $req1->fetch()){
 							echo "
 							<form action='reception_fichier.php' method='post' enctype='multipart/form-data' id='formArticleAdmin'>
-								<input type='hidden' name='idArt' value='".$donnees['id']."'></input>
+								<input type='hidden' name='idArt' value='".$_GET['id']."'></input>
 								<div id='responseCommentaire'>
 									<span id='auteurRep" . $donnees1['idR']. "' class='auteurRep'>
 										<strong>" . $donnees1['auteurRep'] . "</strong> " . $donnees1['dateRep'] . "

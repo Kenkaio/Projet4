@@ -2,8 +2,8 @@
 
 <div id="mesArticles">
 	<?php
-
-		$bdd = new PDO('mysql:host=localhost;dbname=jeanforteroche;charset=utf8', 'root', '');
+		/*$bdd = new PDO('mysql:host=localhost;dbname=jeanforteroche;charset=utf8', 'root', '');*/
+		$bdd = new PDO('mysql:host=db761958864.hosting-data.io;dbname=db761958864;charset=utf8', 'dbo761958864', 'Polo<555');
 		$req = $bdd->query("SELECT * FROM articles ORDER BY id DESC");
 		while ($donnees = $req->fetch()){
 			$date = $donnees['date'];

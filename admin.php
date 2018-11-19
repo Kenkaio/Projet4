@@ -1,16 +1,13 @@
 <?php
-/* ----- Vérification si session est ouverte (si utilisateur connecté) sinon redirection ----- */
 session_start();
-
 if (empty($_SESSION['ouvert']))  {
 	header('location:php/connexion.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>ADMIN</title>
 	<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=0hkhpc4x9cs6zila14oyvwobq0nvvwt8jz83d0b6k58i1q6s"></script>
 	<script>tinymce.init({ selector:'textarea' });</script>
 	<link rel="stylesheet" type="text/css" href="css/admin.css">	
@@ -24,16 +21,24 @@ if (empty($_SESSION['ouvert']))  {
 	<div class="menu">
 		<div id="accueil" class="liensMenu"><a href="admin.php">Accueil</a></div>
 		<div id="ajoutArticle" class="liensMenu">Ajouter un article</div>
-		<div id="administration" class="liensMenu">Administration</div>
 		<div id="monProfil" class="liensMenu">Profil</div>
 		<div id="deco" class="liensMenu"><a href="php/destroy_session.php">Déconnexion</a></div>
 	</div>
 
 	<!-- Menu avec les images au centre -->	
-	<div id="sommaire">
-		<div id="addArticle" class="lienAdmin"></div>
-		<div id="allArticles" class="lienAdmin"></div>
-		<div id="profil" class="lienAdmin"></div>
+	<div id="tousLesArticles">
+		<h1 id="titreTousArticles">Tous les articles</h1>
+		<table id="tableArticle">
+			<tr>
+		       <th>Id</th>
+		       <th>Date</th>
+		       <th>Titre</th>
+		       <th>Commentaires</th>
+		   	</tr>
+		   	<?php
+				include 'php/tableauArticle.php';
+			?>
+		</table>
 	</div>
 
 	<!-- Ajout article -->

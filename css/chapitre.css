@@ -1,0 +1,144 @@
+.contenuArticles{
+	background-color: rgb(232, 242, 255);
+	height: 100%;
+}
+
+.contenuArticles{
+	width: 70%;
+	margin: auto;
+	padding-top: 100px;
+}
+
+#article, #articleComplet{
+	width: 80%;
+	margin: auto; 
+	margin-top: 30px;
+	margin-bottom: 50px;
+	border: 2px solid black;
+	height: 150px;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 30px;
+	color: black;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+#titreArticle{
+	padding: 10px;	
+	font-size: 1.7em;
+	text-align: center;
+	font-weight: bold;
+}
+
+#contenu p, #contenu{
+	margin-left: 15px;
+}
+
+#article:hover{
+	background-color: rgba(255, 255, 255, 0.9);
+	border: 4px groove black;
+	box-shadow: -6px 6px 0px black;
+	text-decoration: none;
+}
+
+#articleComplet{
+	background-color: rgba(255, 255, 255, 0.9);
+	height: 100%;
+}
+
+#titreCom{
+	font-size: 3em;
+	color: rgb(136, 82, 0);
+	text-shadow: -2px 0px 3px rgba(255, 255, 255, 1);
+}
+
+.contenuCom{
+	padding: 15px;
+	border-radius: 15px;
+	margin-top: 40px;
+	margin-left: 150px;
+	margin-bottom: 10px;
+}
+
+#date{
+	width: 100%;
+	margin-left: 20px;
+}
+
+#titreDate{
+	background-color: rgb(236, 192, 145);
+}
+
+.contenuRep{
+	margin-left: 250px;
+	margin-bottom: 15px;
+}
+
+.editTextarea{
+	display: none;
+	margin-top: 30px;
+}
+
+#reponseCom{
+	margin-top: 10px;
+}
+
+textarea{
+	resize: none;
+	width: 90%;
+}
+
+.confirmRepCom{
+	width: 50px;
+	height: 50px;
+	background-image: url('../images/valider.png');
+	background-color: rgb(232, 242, 255);
+	background-size: 100%;
+	border: none;
+	outline: 0;
+	font-size: 0;
+	margin-left: 40%;
+}
+
+#formSignalementCom{
+	position: absolute;
+	margin-top: -22px;
+	margin-left: 80px;
+}
+
+#formSignalementRep{
+	position: absolute;
+	margin-top: -22px;
+	margin-left: 200px;
+}
+
+input, textarea{
+	border: none;
+	background-color: rgb(232, 242, 255);
+	outline: 0;
+}
+
+.repondre, .signalerCom, .signalerRep{
+	color: rgb(2, 78, 162);
+}
+
+h2{
+	padding: 20px;
+}
+
+h2:hover{
+	cursor: pointer;
+}
+
+#ajoutCommentaire{
+	padding: 20px;
+	padding-bottom: 50px;
+}
+
+#reponseCom, .auteurRepCom, #contenuComText, #auteurCom{
+	border-bottom: 1px solid grey
+}

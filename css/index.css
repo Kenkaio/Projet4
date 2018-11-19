@@ -3,9 +3,6 @@
 body{
 	margin: 0;
 	padding: 0;		
-	background-attachment:fixed;	
-	background-image: url('../images/livre.jpg');
-	background-size: 100%;
 }
 
 header{
@@ -17,10 +14,9 @@ header{
 }
 
 .contenu{
-	width: 75%;
+	width: 70%;
 	margin: auto;
 }
-
 #barNav{
 	position: fixed;
 	text-align: center;
@@ -28,12 +24,20 @@ header{
 	margin-top: 5px;
 }
 
+#titre a{
+	color: black;
+}
+
 ul a{
 	color: black;
 }
 
 nav{
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nav a{
+	color: white;
 }
 
 .contenuHeader{	
@@ -61,9 +65,6 @@ nav{
 	border-radius: 30px;
 }
 
-#bg{
-	height: 200px;
-}
 
 .descriptionAuteur{
 	background-color: rgba(255, 255, 255, 0.7);

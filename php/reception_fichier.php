@@ -9,7 +9,8 @@ session_start();
         <h3>Titre menu</h3>
             <?php 
 
-                $bdd = new PDO('mysql:host=localhost;dbname=jeanforteroche;charset=utf8', 'root', '');
+                /*$bdd = new PDO('mysql:host=localhost;dbname=jeanforteroche;charset=utf8', 'root', '');*/
+                $bdd = new PDO('mysql:host=db761958864.hosting-data.io;dbname=db761958864;charset=utf8', 'dbo761958864', 'Polo<555');
 
                 if (empty($_SESSION['ouvert']))  {
                     header('location:connexion.php');
@@ -68,6 +69,42 @@ session_start();
                     )); 
                     header('location:mesArticles.php?id=' . $_POST['idArt']);
                 }
+
+                if(isset($_POST['confirmRepCom'])){
+                    $req = $bdd->prepare('INSERT INTO reponses (idArt, auteurRep, contenuRep) VALUES (:idArt, :auteurRep, :contenuRep)');
+                    $req->execute(array(
+                        'idArt' => $_POST['idCom'], 
+                        'auteurRep' => htmlspecialchars($_POST['auteurRepCom']), 
+                        'contenuRep' => htmlspecialchars($_POST['reponseCom']),
+                    ));
+                    header('location:chapitres.php?id=' . $_POST['idArt']);
+                }  
+
+                if(isset($_POST['signalerCom'])){
+                    $req = $bdd->prepare('UPDATE commentaires SET signalements=signalements+1  WHERE id=?');
+                    $req->execute(array(
+                        $_POST['idSignalementCom']
+                    )); 
+                    header('location:chapitres.php?id=' . $_POST['idArt']);
+                }  
+
+                if(isset($_POST['signalerRep'])){
+                    $req = $bdd->prepare('UPDATE reponses SET signalementsRep=signalementsRep+1  WHERE idR=?');
+                    $req->execute(array(
+                        $_POST['idSignalementCom']
+                    )); 
+                    header('location:chapitres.php?id=' . $_POST['idArt']);
+                }    
+
+                if(isset($_POST['confirmerAjoutCom'])){
+                    $req = $bdd->prepare('INSERT INTO commentaires (idArticle, auteur, contenu) VALUES (:idArticle, :auteur, :contenu)');
+                    $req->execute(array(
+                        'idArticle' => htmlspecialchars($_POST['idArt']), 
+                        'auteur' => htmlspecialchars($_POST['auteurCom']), 
+                        'contenu' => htmlspecialchars($_POST['contenuCom'])
+                    )); 
+                    header('location:chapitres.php?id=' . $_POST['idArt']);
+                }        
        		?>
     </div>    
 </nav>

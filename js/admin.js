@@ -104,14 +104,14 @@ $('.lienAdmin').mouseover(function(){
 });
 
 $('#addArticle').on('click', function(){
-	$('#sommaire').toggle();
+	$('#tousLesArticles').toggle();
 	$('#formArticle').show(1000);
 	ajoutArticleActif=true;
 });
 
 $('#ajoutArticle').on('click', function(){
 	$('#mesArticles').hide();
-	$('#sommaire').hide();
+	$('#tousLesArticles').hide();
 	$('#formArticle').show(1000);
 	ajoutArticleMenu=true;
 	$('#menu').css("transform","translate(0,0)");
@@ -124,7 +124,7 @@ $('#ajoutArticle').on('click', function(){
 
 $('#administration').on('click', function(){	
 	$('#formArticle').hide();
-	$('#sommaire').hide();
+	$('#tousLesArticles').hide();
 	$('#mesArticles').show(1000);
 	allArticle=true;
 	$('#menu').css("transform","translate(0,0)");
@@ -136,7 +136,7 @@ $('#administration').on('click', function(){
 });
 
 $('#allArticles').on('click', function(){
-	$('#sommaire').toggle();
+	$('#tousLesArticles').toggle();
 	$('#mesArticles').show(1000);
 	allArticle = true;
 });
